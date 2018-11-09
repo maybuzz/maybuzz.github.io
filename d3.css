@@ -4,6 +4,7 @@ body {
   padding: 2em;
   position: relative;
   text-align: center;
+  overflow: visible;
 }
 
 #vis{
