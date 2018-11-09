@@ -5,6 +5,7 @@ body {
   position: relative;
   text-align: center;
   overflow: visible;
+  height: 100vh;
 }
 
 #vis{
