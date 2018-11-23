@@ -3,7 +3,7 @@
 // used Mike Bostock's Zoomable Circle Pack example; https://bl.ocks.org/mbostock/7607535
 // Dennis Wegereef @Denniswegereef, Folkert-Jan vd Pol @FjvdP and Titus Wormer @wooorm helped me setup this datavis
 
-d3.json("/data.json").then(result => {
+d3.json("data.json").then(result => {
 
   const margin = 20
   const diameter = 750
