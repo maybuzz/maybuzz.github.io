@@ -1,0 +1,232 @@
+[
+  {
+    "categorie": "rowling",
+    "values": [
+      {
+        "bookTitle": "Harry Potter en het vervloekte kind : deel een en twee",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 367
+      },
+      {
+        "bookTitle": "Harry Potter en de vuurbeker",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 547
+      },
+      {
+        "bookTitle": "Harry Potter en de steen der wijzen",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 228
+      },
+      {
+        "bookTitle": "Een interview met J.K. Rowling",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 63
+      },
+      {
+        "bookTitle": "Harry Potter en de Orde van de Feniks",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 668
+      },
+      {
+        "bookTitle": "Harry Potter en de geheime kamer",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 254
+      },
+      {
+        "bookTitle": "Harry Potter en de gevangene van Azkaban",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 326
+      },
+      {
+        "bookTitle": "Harry Potter en de halfbloed prins",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 555
+      },
+      {
+        "bookTitle": "Harry Potter en de gevangene van Azkaban",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 326
+      },
+      {
+        "bookTitle": "Harry Potter en de relieken van de dood",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 541
+      },
+      {
+        "bookTitle": "Fabeldieren en waar ze te vinden",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 139
+      },
+      {
+        "bookTitle": "Een goede raad",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 540
+      },
+      {
+        "bookTitle": "Harry Potter en de geheime kamer",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 254
+      },
+      {
+        "bookTitle": "Harry Potter en de steen der wijzen",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 227
+      },
+      {
+        "bookTitle": "De vertelsels  van Baker de Bard : vert. uit het Engels Wiebe Buddingh'",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 125
+      },
+      {
+        "bookTitle": "Zwerkbal door de eeuwen heen",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 101
+      },
+      {
+        "bookTitle": "De vertelsels van Baker de Bard",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 125
+      },
+      {
+        "bookTitle": "Wat belangrijk is : over het belang van verbeelding en waarom fouten maken juist goed is",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 79
+      },
+      {
+        "bookTitle": "Fantastic beasts and where to find themTM : het complete filmscenario",
+        "bookAuthor": "Rowling, J.K.",
+        "pages": 297
+      }
+    ]
+  },
+  {
+    "categorie": "tolkien",
+    "values": [
+      {
+        "bookTitle": "De hobbit",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 253
+      },
+      {
+        "bookTitle": "De reisgenoten",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 491
+      },
+      {
+        "bookTitle": "De terugkeer van de koning",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 360
+      },
+      {
+        "bookTitle": "De twee torens",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 410
+      },
+      {
+        "bookTitle": "Brieven",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 588
+      },
+      {
+        "bookTitle": "De Silmarillion",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 415
+      },
+      {
+        "bookTitle": "In de ban van de ring",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 1248
+      },
+      {
+        "bookTitle": "Brieven van de Kerstman",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 111
+      },
+      {
+        "bookTitle": "De kinderen van Húrin",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 317
+      },
+      {
+        "bookTitle": "De legende van Sigurd en Gudrún",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 378
+      },
+      {
+        "bookTitle": "Roverandom",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 125
+      },
+      {
+        "bookTitle": "Sprookjes en vertellingen",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 292
+      },
+      {
+        "bookTitle": "Nagelaten vertellingen",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 587
+      },
+      {
+        "bookTitle": "De hobbit, of Daarheen en weer terug",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 300
+      },
+      {
+        "bookTitle": "Arthurs val",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 291
+      },
+      {
+        "bookTitle": "De avonturen van Tom Bombadil",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 90
+      },
+      {
+        "bookTitle": "Het verhaal van Kullervo",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 221
+      },
+      {
+        "bookTitle": "De avonturen van Tom Bombadil en andere verzen uit Het Rode Boek",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 68
+      },
+      {
+        "bookTitle": "De smid van Groot Wolding",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 91
+      },
+      {
+        "bookTitle": "Beren en Lúthien : de terugkeer naar Midden-aarde",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 278
+      },
+      {
+        "bookTitle": "In de ban van de ring: aanhangsels",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 159
+      },
+      {
+        "bookTitle": "Boer Gilles van Ham",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 85
+      },
+      {
+        "bookTitle": "In de ban van de ring : de aanhangsels",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 159
+      },
+      {
+        "bookTitle": "Sprookjes",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 152
+      },
+      {
+        "bookTitle": "Boer Gilles van Ham : Aegidii Ahenobarbi Julii Agricole de Hammo, Domini de Domito, Aule Draconarie Comitis, Regni Minimi Regis et Basilei, mira facinora et mirabilis exortus, of in de volkstaal: De opkomst en wonderbaarlijke avonturen van Boer Gilles, Heer van Tam, Graaf van Worminghall en Koning van het Kleine Koninkrijk",
+        "bookAuthor": "Tolkien, J.R.R.",
+        "pages": 231
+      }
+    ]
+  }
+]

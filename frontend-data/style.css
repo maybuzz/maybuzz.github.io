@@ -1,0 +1,57 @@
+@font-face {
+  font-family: bignoodle;
+  src: url(assets/big_noodle_titling.ttf);
+}
+
+@font-face {
+  font-family: Noto;
+  src: url(assets/NotoSans-Regular.ttf);
+}
+
+body {
+  background-image: url(assets/comic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: Noto;
+  color: #222;
+  font-style: 16px;
+}
+
+h1 {
+  font-family: bignoodle;
+  color: #333;
+  font-size: 3em;
+  margin: 0.2em 0;
+}
+
+p {
+  margin: 0;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node:hover {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node--leaf {
+  fill: white;
+}
+
+.label {
+  font-family: Noto;
+  font-size: 0.8em;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+  position: inherit;
+}
+
+.label,
+.node--root,
+.node--leaf {
+  pointer-events: none;
+}
