@@ -1,3 +1,5 @@
+/* attributes */
+
 .nopadding {
 	padding: 0;
 }
@@ -6,11 +8,7 @@
 	margin: 0;
 }
 
-.body {
-	background-color: darkred;
-	width: 100vw;
-	margin: 0 auto;
-}
+/* grid */
 
 .menu {
 	position: absolute;
@@ -47,6 +45,14 @@
 	grid-template-rows: repeat(24, 30vh);
 }
 
+/* styles */
+
+.body {
+	background-color: darkred;
+	width: 100vw;
+	margin: 0 auto;
+}
+
 .header {
 	grid-area: header;
 	text-align: center;
@@ -69,6 +75,8 @@
 .subtitle-dish {
 	color: darkred;
 }
+
+/* menu sections */
 
 .section {
 	background-color: red;
@@ -98,12 +106,12 @@
 
 .section-soup {
 	grid-area: soup;
-	top: 16.5em;
+	top: 15.25em;
 }
 
 .section-salads {
 	grid-area: salads;
-	top: 16.5em;
+	top: 15.25em;
 }
 
 .section-boards {
@@ -119,9 +127,8 @@
 
 
 @media (max-width: 58em) {
-  .body {
-    background-color: darkgreen;
-  }
+
+	/* grid */
 
 	.menu {
 		position: absolute;
@@ -161,6 +168,12 @@
 		grid-template-rows: repeat(30, 22.5vh);
   }
 
+	/* styles */
+
+	.body {
+    background-color: darkgreen;
+  }
+
 	.title {
 		color: lightgreen;
 	}
@@ -176,6 +189,8 @@
 	.subtitle-dish {
 		color: darkgreen;
 	}
+
+	/* menu sections */
 
 	.section {
 		background-color: lightgreen;
@@ -219,9 +234,8 @@
 }
 
 @media (max-width: 38em) {
-  .body {
-    background-color: darkblue;
-  }
+
+	/* grid */
 
 	.menu {
 		height: 310vh;
@@ -262,6 +276,12 @@
 		grid-template-rows: repeat(33, 22.5vh);
   }
 
+	/* styles */
+
+	.body {
+		background-color: darkblue;
+	}
+
 	.title {
 		color: blue;
 	}
@@ -278,6 +298,8 @@
 		color: darkblue;
 	}
 
+	/* menu sections */
+
 	.section {
 		background-color: blue;
 	}
@@ -292,7 +314,6 @@
 
 	.section-platters {
 		grid-area: platters;
-		top: 0;
 	}
 
 	.section-soup {
