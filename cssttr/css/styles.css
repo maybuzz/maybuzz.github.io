@@ -1,84 +1,313 @@
+.nopadding {
+	padding: 0;
+}
+
+.nomargin {
+	margin: 0;
+}
+
 .body {
-	background-color: peachpuff;
-  text-align: center;
+	background-color: darkred;
+	width: 100vw;
+	margin: 0 auto;
+}
+
+.menu {
+	position: absolute;
+	padding: 1rem;
+	box-sizing: border-box;
+	width: 100vw;
+	display: grid;
+	grid-gap: 1.5rem;
+	grid-template-areas:
+		"header header header header"
+		". . . ."
+		". . . ."
+    "eggs . . ."
+    "eggs . . ."
+		". . . ."
+		". noshes . ."
+		". noshes . ."
+		". . . ."
+		". . platters platters"
+		". . . ."
+		". . . ."
+		". . . ."
+		". . soup ."
+		". . . ."
+		". . . ."
+		". . . salads"
+		". . . ."
+		". . . ."
+		"boards boards . ."
+		". . . ."
+		". . . ."
+		". . sweet sweet";
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(24, 30vh);
 }
 
 .header {
+	grid-area: header;
 	text-align: center;
+	position: sticky;
 }
 
-.header-dishes {
-	
+.title {
+	color: red;
 }
 
-.h1 {
-  margin-bottom: 0;
+.title-dish {
+	color: darkred;
 }
 
-.p {
-  margin-top: 0;
+.subtitle {
+	color: red;
+	margin: 0.5rem 0 1em 0;
 }
 
-.main {
-	display: flex;
-	text-align: center;
-	width: 100vw;
-  height: 100vh;
+.subtitle-dish {
+	color: darkred;
 }
 
 .section {
-  margin: auto;
-  padding: 1em;
+	background-color: red;
+	padding: 0.5rem 1rem;
+	position: sticky;
+	top: 1em;
 }
 
 .section:hover {
-  background-color: lightgrey;
-  height: 100vh;
-  width: 25vw;
-  margin: 0;
+	border-radius: 50px;
 }
+
+.section-eggs {
+	grid-area: eggs;
+	top: .5em;
+}
+
+.section-noshes {
+	grid-area: noshes;
+	top: .5em;
+}
+
+.section-platters {
+	grid-area: platters;
+	top: .5em;
+}
+
+.section-soup {
+	grid-area: soup;
+	top: 16.5em;
+}
+
+.section-salads {
+	grid-area: salads;
+	top: 16.5em;
+}
+
+.section-boards {
+	grid-area: boards;
+	top: 32.5rem;
+}
+
+.section-sweet {
+	grid-area: sweet;
+	top: 32.5rem;
+}
+
 
 
 @media (max-width: 58em) {
   .body {
-    background-color: lightyellow;
+    background-color: darkgreen;
   }
 
-  .main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+	.menu {
+		position: absolute;
+		grid-gap: 1em;
+		grid-template-areas:
+		"header header header"
+		". . ."
+		". . ."
+		". . ."
+    "eggs eggs ."
+    "eggs eggs ."
+		". . ."
+		". . ."
+		". . noshes"
+		". . noshes"
+		". . noshes"
+		". . ."
+		". . platters"
+		". . platters"
+		". . platters"
+		". . ."
+		". . ."
+		". . ."
+		"soup soup ."
+		". . ."
+		". . ."
+		". . ."
+		"salads salads ."
+		". . ."
+		". . ."
+		". . ."
+		"boards boards ."
+		". . ."
+		". . ."
+		"sweet sweet sweet";
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(30, 22.5vh);
   }
 
-  .section {
-    width: 100%;
-  }
+	.title {
+		color: lightgreen;
+	}
 
-  .section:hover {
-    grid-column: span 3;
-    width: 100vw;
-    height: 100%;
-  }
+	.title-dish {
+		color: darkgreen;
+	}
+
+	.subtitle {
+		color: lightgreen;
+	}
+
+	.subtitle-dish {
+		color: darkgreen;
+	}
+
+	.section {
+		background-color: lightgreen;
+		padding: 0.5rem 1rem;
+	}
+
+	.section-eggs {
+		grid-area: eggs;
+		top: 1em;
+	}
+
+	.section-noshes {
+		grid-area: noshes;
+		top: 1em;
+	}
+
+	.section-platters {
+		grid-area: platters;
+		top: 36.7em;
+	}
+
+	.section-soup {
+		grid-area: soup;
+		top: 24.75em;
+	}
+
+	.section-salads {
+		grid-area: salads;
+		top: 36.7em;
+	}
+
+	.section-boards {
+		grid-area: boards;
+	}
+
+	.section-sweet {
+		grid-area: sweet;
+		top: 100;
+	}
+
 }
-
-
 
 @media (max-width: 38em) {
   .body {
-    background-color: lightblue;
+    background-color: darkblue;
   }
 
-  .main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+	.menu {
+		height: 310vh;
+		grid-template-areas:
+			"header"
+			"."
+			"."
+			"."
+	    "eggs"
+	    "eggs"
+			"."
+			"."
+			"noshes"
+			"noshes"
+			"."
+			"."
+			"."
+			"."
+			"platters"
+			"."
+			"."
+			"."
+			"."
+			"soup"
+			"."
+			"."
+			"."
+			"salads"
+			"."
+			"."
+			"."
+			"boards"
+			"."
+			"."
+			"sweet"
+			"sweet";
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(33, 22.5vh);
   }
 
-  .section {
-    width: 100%;
-  }
+	.title {
+		color: blue;
+	}
 
-  .section:hover {
-    grid-column: span 2;
-    width: 100vw;
-    height: 100%;
-  }
+	.title-dish {
+		color: darkblue;
+	}
+
+	.subtitle {
+		color: blue;
+	}
+
+	.subtitle-dish {
+		color: darkblue;
+	}
+
+	.section {
+		background-color: blue;
+	}
+
+	.section-eggs {
+		grid-area: eggs;
+	}
+
+	.section-noshes {
+		grid-area: noshes;
+	}
+
+	.section-platters {
+		grid-area: platters;
+		top: 0;
+	}
+
+	.section-soup {
+		grid-area: soup;
+	}
+
+	.section-salads {
+		grid-area: salads;
+	}
+
+	.section-boards {
+		grid-area: boards;
+	}
+
+	.section-sweet {
+		grid-area: sweet;
+	}
 }
