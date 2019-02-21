@@ -1,0 +1,550 @@
+/* @import url("https://fonts.googleapis.com/css?family=Dosis:400,700"); */
+
+/* colors */
+:root {
+	--color-default-primary: #fff;
+  --color-default-secondary: #000;
+  --color-sun-primary: #fc85f2;
+  --color-sun-secondary: #e80909;
+	--color-rain-primary: #89cff0;
+  --color-rain-secondary: #f987c5;
+  --color-cloudy-secondary: lightgreen;
+  --color-stormy-primary: purple;
+  --color-stormy-secondary: yellow;
+}
+
+
+/* general */
+* {
+	padding: 0;
+	margin: 0;
+  box-sizing: border-box;
+}
+
+.root {
+	width: 100vw;
+	margin: 0 auto;
+  /* font-family: Dosis; */
+}
+
+.switch__label {
+  color: var(--color-default-secondary);
+}
+
+/* grid */
+.menu {
+  background-color: var(--color-default-primary);
+	position: absolute;
+	padding: 1rem;
+	width: 100vw;
+  display: grid;
+	grid-template-areas:
+		"header header header header"
+		". . . ."
+		". . . ."
+    "eggs . . ."
+    "eggs . . ."
+		". . . ."
+		". noshes . ."
+		". noshes . ."
+		". . . ."
+		". . platters platters"
+		". . . ."
+		". . . ."
+		". . . ."
+		". . soup ."
+		". . . ."
+		". . . ."
+		". . . salads"
+		". . . ."
+		". . . ."
+		"boards boards . ."
+		". . . ."
+		". . . ."
+		". . sweet sweet";
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(24, 30vh);
+  grid-gap: 1.5rem;
+}
+
+
+/* logo */
+.logo {
+	top: 20vh;
+	grid-area: header;
+	text-align: center;
+  position: sticky;
+}
+
+.logo__title {
+	color: var(--color-default-secondary);
+	font-size: 10em;
+	transition: font-size .5s ease-in;
+}
+
+.logo__subtitle {
+	font-size: 1.5em;
+	color: var(--color-default-secondary);
+}
+
+
+/* sections */
+
+.section {
+  background-color: var(--color-default-secondary);
+  position: sticky;
+  overflow: scroll;
+	scroll-behavior: [ auto | smooth ];
+	padding: 0.5rem 1rem;
+	top: 1em;
+	transform: rotate(180deg);
+}
+
+.section:hover {
+	background-color: var(--color-default-primary);
+	height: 100%;
+	transition: transform .2;
+	transform: rotate(360deg);
+}
+
+.section__header__title {
+	color: var(--color-default-primary);
+	font-size: 1.75rem;
+	transform: rotate(180deg)
+}
+
+.section__header__subtitle {
+	color: var(--color-default-primary);
+	transform: rotate(180deg)
+}
+
+.section:hover .section__header__title, .section:hover .section__header__subtitle, .section:hover .section__dish {
+	color: var(--color-default-secondary);
+	transform: rotate(360deg);
+}
+
+.section--eggs {
+	grid-area: eggs;
+	top: .5em;
+}
+
+.section--noshes {
+	grid-area: noshes;
+	top: .5em;
+}
+
+.section--platters {
+	grid-area: platters;
+	top: .5em;
+}
+
+.section--soup {
+	grid-area: soup;
+	top: 15.15em;
+}
+
+.section--salads {
+	grid-area: salads;
+	top: 15.15em;
+}
+
+.section--boards {
+	grid-area: boards;
+	top: 29.75rem;
+}
+
+.section--sweet {
+	grid-area: sweet;
+	top: 32.5rem;
+}
+
+.container--platters, .container--boards, .container--sweet {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 1rem;
+}
+
+
+/* dishes */
+.section__dish {
+	margin: 0.7rem 0;
+	padding: .2rem .5rem;
+}
+
+.section__dish:hover {
+	background-color: var(--color-default-secondary);
+}
+
+.section__dish__title {
+	color: var(--color-default-secondary);
+	font-size: 1rem;
+	margin: 0;
+	padding: 0;
+}
+
+.section__dish__subtitle {
+	color: var(--color-default-secondary);
+	font-size: 1rem;
+	margin: 0;
+	padding: 0;
+}
+
+.section__dish__prize {
+	color: var(--color-default-secondary);
+	float: right;
+	font-size: 1rem;
+	margin: 0;
+	padding: 0;
+}
+
+.section__dish:hover .section__dish__title,  .section__dish:hover .section__dish__subtitle, .section__dish:hover .section__dish__prize {
+	color: var(--color-default-primary);
+}
+
+@media (max-width: 58em) {
+	.menu {
+		grid-template-areas:
+		"header header header"
+		". . ."
+		". . ."
+		". . ."
+    "eggs . ."
+		". . ."
+		". . ."
+		". noshes ."
+		". . ."
+		". . ."
+		". . platters"
+		". . ."
+		". . ."
+		"soup . ."
+		". . ."
+		". . ."
+		". salads ."
+		". . ."
+		". . ."
+		". . boards"
+		". . ."
+		". . ."
+		"sweet sweet sweet";
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(30, 25vh);
+    grid-gap: 0;
+  }
+
+	/* logo */
+	.logo__title {
+		line-height: 11.5rem;
+		font-size: 9em;
+	}
+
+	/* menu sections */
+	.section {
+		height: 20vw;
+	}
+
+	.section--eggs {
+		grid-area: eggs;
+		top: 2.5vh;
+	}
+
+	.section--noshes {
+		grid-area: noshes;
+		top: 2.5vh;
+	}
+
+	.section--platters {
+		grid-area: platters;
+		top: 2.5vh;
+	}
+
+	.section--soup {
+		grid-area: soup;
+		top: 38vh;
+	}
+
+	.section--salads {
+		grid-area: salads;
+		top: 38vh;
+	}
+
+	.section--boards {
+		grid-area: boards;
+		top: 38vh;
+	}
+
+	.section--sweet {
+		grid-area: sweet;
+		top: 100vh;
+	}
+
+  .section--eggs:hover {
+		height: 75vh
+	}
+
+  .section--noshes:hover {
+		height: 60vh;
+	}
+
+  .section--platters:hover {
+		height: 50vh;
+	}
+
+  .section--soup:hover, .section--salads:hover {
+		height: 30vh;
+	}
+
+  .section--boards:hover {
+		height: 57.5vh;
+	}
+
+	.container--platters, .container--boards {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-column-gap: 1rem;
+	}
+
+	.container--sweet {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 1rem;
+	}
+
+	/* dishes */
+	.section__dish {
+		margin: 0.7rem 0;
+	}
+
+	.section__dish__title {
+		font-size: 1rem;
+	}
+
+	.section__dish__subtitle {
+		font-size: 1rem;
+	}
+
+	.section__dish__prize {
+		float: right;
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 38em) {
+	/* grid */
+	.menu {
+		grid-template-areas:
+			"header"
+			"."
+			"."
+			"."
+			"."
+	    "eggs"
+			"eggs"
+			"."
+			"."
+			"noshes"
+			"noshes"
+			"."
+			"."
+			"platters"
+			"platters"
+			"."
+			"."
+			"soup"
+			"soup"
+			"."
+			"."
+			"salads"
+			"salads"
+			"."
+			"."
+			"boards"
+			"boards"
+			"."
+			"."
+			"sweet"
+			"sweet";
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(40, 25vh);
+  }
+
+	/* logo */
+	.logo__title {
+		font-size: 5.5em;
+	}
+
+	.logo__subtitle {
+		font-size: 1.25rem;
+		margin-top: 10vh;
+	}
+
+	/* menu sections */
+	.section--eggs {
+		grid-area: eggs;
+		top: 2vh;
+	}
+
+	.section--noshes {
+		grid-area: noshes;
+		top: 2vh;
+	}
+
+	.section--platters {
+		grid-area: platters;
+		top: 2vh;
+	}
+
+	.section--soup {
+		grid-area: soup;
+		top: 2vh;
+	}
+
+	.section--salads {
+		grid-area: salads;
+		top: 2vh;
+	}
+
+	.section--boards {
+		grid-area: boards;
+		top: 2vh;
+	}
+
+	.section--sweet {
+		grid-area: sweet;
+		top: 2vh;
+	}
+
+  .section--eggs:hover, .section--noshes:hover, .section--platters:hover, .section--soup:hover, .section--salads:hover, .section--boards:hover, .section--sweet:hover {
+    height: 95vh;
+  }
+
+	.container--sweet {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-column-gap: 1rem;
+	}
+
+	/* dishes */
+	.section__dish {
+		margin: 0.7rem 0;
+	}
+
+	.section__dish__title {
+		font-size: 1rem;
+	}
+
+	.section__dish__subtitle {
+		font-size: 1rem;
+	}
+
+	.section__dish__prize {
+		float: right;
+		font-size: 1rem;
+	}
+}
+
+
+/* color switch */
+
+/* sunny: pink&red */
+.switch--sunny:checked ~ .switch__label {
+  color: var(--color-sun-primary);
+}
+
+.switch--sunny:checked ~ .menu .logo__title, .switch--sunny:checked ~ .menu .logo__subtitle {
+  color: var(--color-sun-secondary);
+}
+
+.switch--sunny:checked ~ .menu, .switch--sunny:checked ~ .menu .section:hover {
+  background-color: var(--color-sun-primary);
+}
+
+.switch--sunny:checked ~ .menu .section, .switch--sunny:checked ~ .menu .section .section__dish:hover {
+	background-color: var(--color-sun-secondary);
+}
+
+.switch--sunny:checked ~ .menu .section .section__header__title, .switch--sunny:checked ~ .menu .section .section__header__subtitle, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+	color: var(--color-sun-primary);
+}
+
+.switch--sunny:checked ~ .menu .section:hover .section__header__title, .switch--sunny:checked ~ .menu .section:hover .section__header__subtitle, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__prize, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__title, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__subtitle {
+	color: var(--color-sun-secondary);
+}
+
+
+/* rainy: blue&pink */
+.switch--rainy:checked ~ .switch__label {
+  color: var(--color-rain-primary);
+}
+
+.switch--rainy:checked ~ .menu .logo__title, .switch--rainy:checked ~ .menu .logo__subtitle {
+  color: var(--color-rain-secondary);
+}
+
+.switch--rainy:checked ~ .menu, .switch--rainy:checked ~ .menu .section:hover {
+  background-color: var(--color-rain-primary);
+}
+
+.switch--rainy:checked ~ .menu .section, .switch--rainy:checked ~ .menu .section .section__dish:hover {
+	background-color: var(--color-rain-secondary);
+}
+
+.switch--rainy:checked ~ .menu .section .section__header__title, .switch--rainy:checked ~ .menu .section .section__header__subtitle, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+	color: var(--color-rain-primary);
+}
+
+.switch--rainy:checked ~ .menu .section:hover .section__header__title, .switch--rainy:checked ~ .menu .section:hover .section__header__subtitle, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__title, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+	color: var(--color-rain-secondary);
+}
+
+
+/* cloudy: white&green */
+.switch--cloudy:checked ~ .switch__label {
+  color: var(--color-cloudy-secondary);
+}
+
+.switch--cloudy:checked ~ .menu .logo__title, .switch--cloudy:checked ~ .menu .logo__subtitle {
+  color: var(--color-cloudy-secondary);
+}
+
+.switch--cloudy:checked ~ .menu, .switch--cloudy:checked ~ .menu .section:hover {
+  background-color: var(--color-default-primary);
+}
+
+.switch--cloudy:checked ~ .menu .section, .switch--cloudy:checked ~ .menu .section .section__dish:hover {
+	background-color: var(--color-cloudy-secondary);
+}
+
+.switch--cloudy:checked ~ .menu .section .section__header__title, .switch--cloudy:checked ~ .menu .section .section__header__subtitle, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+	color: var(--color-default-primary);
+}
+
+.switch--cloudy:checked ~ .menu .section:hover .section__header__title, .switch--cloudy:checked ~ .menu .section:hover .section__header__subtitle, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__title, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+	color: var(--color-cloudy-secondary);
+}
+
+
+/* stormy: purple&yellow */
+.switch--stormy:checked ~ .switch__label {
+  color: var(--color-stormy-primary);
+}
+
+.switch--stormy:checked ~ .menu .logo__title, .switch--stormy:checked ~ .menu .logo__subtitle  {
+  color: var(--color-stormy-secondary);
+}
+
+.switch--stormy:checked ~ .menu, .switch--stormy:checked ~ .menu .section:hover {
+  background-color: var(--color-stormy-primary);
+}
+
+.switch--stormy:checked ~ .menu .section, .switch--stormy:checked ~ .menu .section .section__dish:hover{
+	background-color: var(--color-stormy-secondary);
+}
+
+.switch--stormy:checked ~ .menu .section .section__header__title, .switch--stormy:checked ~ .menu .section .section__header__subtitle, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+	color: var(--color-stormy-primary);
+}
+
+.switch--stormy:checked ~ .menu .section:hover .section__header__title, .switch--stormy:checked ~ .menu .section:hover .section__header__subtitle, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__title, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+	color: var(--color-stormy-secondary);
+}

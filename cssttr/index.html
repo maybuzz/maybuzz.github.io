@@ -3,81 +3,292 @@
 <head>
     <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=-1">
-    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/newstyles.css" rel="stylesheet">
     <title>Russ & Daughters</title>
 </head>
 
-<body class="body">
+<body class="root">
+
+  <input class="switch switch--sunny" type="checkbox" checked>
+  <label class="switch__label">Sunny</label>
+
+  <input class="switch switch--rainy" type="checkbox">
+  <label class="switch__label">Rainy</label>
+
+  <input class="switch switch--cloudy" type="checkbox">
+  <label class="switch__label">Cloudy</label>
+
+  <input class="switch switch--stormy" type="checkbox">
+  <label class="switch__label">Stormy</label>
 
 	<main class="menu">
 
-			<header class="header">
-				<h1 class="title nopadding nomargin"><span>Russ</span> <span>&</span> <span>Daughters</span></h1>
-				<p class="subtitle nopadding">appetizing since 1924</p>
+			<header class="logo">
+				<p class="logo__subtitle">appetizing since 1924</p>
+				<h1 class="logo__title"><span>Russ</span> <span>&</span> <span>Daughters</span></h1>
 			</header>
 
-			<section class="section section-eggs">
-				<div class="container">
-					<header class="header-dish">
-						<h2 class="title-dish nopadding nomargin">eggs</h2>
-						<p class="subtitle-dish nopadding nomargin">served all the time</p>
+			<section class="section section--eggs">
+
+					<header class="section__header">
+						<h2 class="section__header__title">eggs</h2>
+						<p class="section__header__subtitle">served all the time</p>
 					</header>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">15</div>
+						<h3 class="section__dish__title">lox, eggs &amp; onions</h3>
+						<p class="section__dish__subtitle">with toasted shissel rye</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">19</div>
+						<h3 class="section__dish__title">sturgeon, eggs &amp; onion</h3>
+						<p class="section__dish__subtitle">with toasted pumpernickel</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">12</div>
+						<h3 class="section__dish__title">bella's matzo brei</h3>
+						<p class="section__dish__subtitle">matzo, egg, applesauce, sour cream</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">16</div>
+						<h3 class="section__dish__title">lower sunny side</h3>
+						<p class="section__dish__subtitle">sunny side up eggs, gaspe nova salmon, potato latkes</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">18</div>
+						<h3 class="section__dish__title">eggs benny</h3>
+						<p class="section__dish__subtitle">poached eggs, scottish smoked salmon, sautéed spinach, hollandaise, challah</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">15</div>
+						<h3 class="section__dish__title">farm egg omelette</h3>
+						<p class="section__dish__subtitle">gaspe nova salmon, cream cheese</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">180</div>
+						<h3 class="section__dish__title">soft scrambled eggs &amp; caviar</h3>
+						<p class="section__dish__subtitle">custard-like egg, caviar with challah</p>
+					</article>
+
+			</section>
+
+			<section class="section section--noshes">
+
+				<header class="section__header">
+					<h2 class="section__header__title">noshes</h2>
+					<p class="section__header__subtitle">small dishes</p>
+				</header>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">13</div>
+					<h3 class="section__dish__title">potato latkes</h3>
+					<p class="section__dish__subtitle">salmon roe and creme fraiche</p>
+				</article>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">10</div>
+					<h3 class="section__dish__title">kasha varnishkas</h3>
+					<p class="section__dish__subtitle">buckwheat, caramelized onion, bowtie egg noodles</p>
+				</article>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">10</div>
+					<h3 class="section__dish__title">super heebster</h3>
+					<p class="section__dish__subtitle">whitefish &amp; baked salmon salad, horseradish dill cream cheese, bagel toast</p>
+				</article>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">12</div>
+					<h3 class="section__dish__title">pastrami russ</h3>
+					<p class="section__dish__subtitle">pastrami-cured salmon, muenster cheese, sauerkraut, mustard, pickle, pretzel roll</p>
+				</article>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">7</div>
+					<h3 class="section__dish__title">sours</h3>
+					<p class="section__dish__subtitle">pickled vegetables, pickles from the barrel</p>
+				</article>
+
+			</section>
+
+			<section class="section section--platters">
+				<header class="section__header">
+					<h2 class="section__header__title">platters</h2>
+					<p class="section__header__subtitle">here to share</p>
+				</header>
+
+				<div class="container--platters">
+
+					<article class="section__dish">
+						<div class="section__dish__prize">95</div>
+						<h3 class="section__dish__title">smoked fish</h3>
+						<p class="section__dish__subtitle">with cream cheese, tomato, capers &amp; new potato salad</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">80</div>
+						<h3 class="section__dish__title">the hattie</h3>
+						<p class="section__dish__subtitle">3 types of smoked fish and sable</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">70</div>
+						<h3 class="section__dish__title">the ida</h3>
+						<p class="section__dish__subtitle">3 types of smoked salmon, capers, dille and a bread basket</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">90</div>
+						<h3 class="section__dish__title">the anne</h3>
+						<p class="section__dish__subtitle">gaspe nova salmon, private stock sturgeon, wild alaskan salmon roe</p>
+					</article>
+
 				</div>
+
 			</section>
 
-			<section class="section section-noshes">
-				<div class="container">
-				<header class="header-dish">
-					<h2 class="title-dish nopadding nomargin">noshes</h2>
-					<p class="subtitle-dish nopadding nomargin">small dishes</p>
+			<section class="section section--soup">
+
+				<header class="section__header">
+					<h2 class="section__header__title">soup</h2>
+					<p class="section__header__subtitle">slirp it, we like that</p>
 				</header>
-			</div>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">8</div>
+					<h3 class="section__dish__title">chicken matzo ball</h3>
+				</article>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">8</div>
+					<h3 class="section__dish__title">mushroom barley</h3>
+				</article>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">8</div>
+					<h3 class="section__dish__title">borscht</h3>
+					<p class="section__dish__subtitle">served chilled</p>
+				</article>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">10</div>
+					<h3 class="section__dish__title">smoked whitefish chowder</h3>
+				</article>
+
 			</section>
 
-			<section class="section section-platters">
-				<div class="container">
-				<header class="header-dish">
-					<h2 class="title-dish nopadding nomargin">platters</h2>
-					<p class="subtitle-dish nopadding nomargin">here to share</p>
+			<section class="section section--salads">
+				<header class="section__header">
+					<h2 class="section__header__title">salads</h2>
+					<p class="section__header__subtitle">collard greens</p>
 				</header>
-			</div>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">9</div>
+					<h3 class="section__dish__title">mixed green</h3>
+					<p class="section__dish__subtitle">with citrus dressing</p>
+				</article>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">14</div>
+					<h3 class="section__dish__title">smoked trout&potato</h3>
+					<p class="section__dish__subtitle">with mustard dressing</p>
+				</article>
+
+				<article class="section__dish">
+					<div class="section__dish__prize">14</div>
+					<h3 class="section__dish__title">chopped salad</h3>
+					<p class="section__dish__subtitle">with buttermilk dressing</p>
+				</article>
+
 			</section>
 
-			<section class="section section-soup">
-				<div class="container">
-				<header class="header-dish">
-					<h2 class="title-dish nopadding nomargin">soup</h2>
-					<p class="subtitle-dish nopadding nomargin">slirp it, we like that</p>
+			<section class="section section--boards">
+				<header class="section__header">
+					<h2 class="section__header__title">boards</h2>
+					<p class="section__header__subtitle">open-faced sandwiches</p>
 				</header>
-			</div>
+
+				<div class="container--boards">
+
+					<article class="section__dish">
+						<div class="section__dish__prize">16</div>
+						<h3 class="section__dish__title">the classic</h3>
+						<p class="section__dish__subtitle">gaspe nova smoked salmon, cream cheese, tomato, onion, capers</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">22</div>
+						<h3 class="section__dish__title">mensch</h3>
+						<p class="section__dish__subtitle">sturgeon, butter, tomato, onion, capers</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">18</div>
+						<h3 class="section__dish__title">shtetl</h3>
+						<p class="section__dish__subtitle">smoked sable, goat cream cheese, tomato, onion, capers</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">16</div>
+						<h3 class="section__dish__title">yum kippered</h3>
+						<p class="section__dish__subtitle">kippered salmon, cream cheese, tomato, onion, capers</p>
+					</article>
+
+				</div>
+
 			</section>
 
-			<section class="section section-salads">
-				<div class="container">
-				<header class="header-dish">
-					<h2 class="title-dish nopadding nomargin">salads</h2>
-					<p class="subtitle-dish nopadding nomargin">collard greens</p>
+			<section class="section section--sweet">
+				<header class="section__header">
+					<h2 class="section__header__title">sweet</h2>
+					<p class="section__header__subtitle">dessert, but different</p>
 				</header>
-			</div>
-			</section>
 
-			<section class="section section-boards">
-				<div class="container">
-				<header class="header-dish">
-					<h2 class="title-dish nopadding nomargin">boards</h2>
-					<p class="subtitle-dish nopadding nomargin">open-faced sandwiches</p>
-				</header>
-			</div>
-			</section>
+				<div class="container--sweet">
+					<article class="section__dish">
+						<div class="section__dish__prize">10</div>
+						<h3 class="section__dish__title" >babka french toast</h3>
+						<p class="section__dish__subtitle">chocolate babka and berries</p>
+					</article>
 
-			<section class="section section-sweet">
-				<div class="container section-sweet">
-				<header class="header-dish">
-					<h2 class="title-dish nopadding nomargin">sweet</h2>
-					<p class="subtitle-dish nopadding nomargin">dessert, but different</p>
-				</header>
-			</div>
+					<article class="section__dish">
+						<div class="section__dish__prize">6</div>
+						<h3 class="section__dish__title">grandpa's grapefruit</h3>
+						<p class="section__dish__subtitle">grapefruit with maple syrup</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">8</div>
+						<h3 class="section__dish__title">halvah ice cream</h3>
+						<p class="section__dish__subtitle">halvah, sesame, salted caramel</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">7</div>
+						<h3 class="section__dish__title">noodle kugel</h3>
+						<p class="section__dish__subtitle">farmer cheese, raisins, egg noodles</p>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">8</div>
+						<h3 class="section__dish__title">blintzes</h3>
+					</article>
+
+					<article class="section__dish">
+						<div class="section__dish__prize">8</div>
+						<h3 class="section__dish__title">cookie plate</h3>
+					</article>
+
+        </div>
+
 			</section>
 
 	</main>
