@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css?family=Dosis:400,700"); */
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
 
 /* colors */
 :root {
@@ -13,18 +13,38 @@
   --color-stormy-secondary: yellow;
 }
 
-
 /* general */
 * {
 	padding: 0;
 	margin: 0;
-  box-sizing: border-box;
+}
+
+*:focus {
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 0.8s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px); }
+	20% { -webkit-transform: translate(-3px, 0px); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px); }
+	50% { -webkit-transform: translate(-1px, 2px); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-0deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(0deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-0deg); }
 }
 
 .root {
 	width: 100vw;
 	margin: 0 auto;
-  /* font-family: Dosis; */
+  font-family: Dosis;
 }
 
 .switch__label {
@@ -36,7 +56,6 @@
   background-color: var(--color-default-primary);
 	position: absolute;
 	padding: 1rem;
-	width: 100vw;
   display: grid;
 	grid-template-areas:
 		"header header header header"
@@ -70,15 +89,28 @@
 
 /* logo */
 .logo {
-	top: 20vh;
+	top: 15.5%;
 	grid-area: header;
 	text-align: center;
   position: sticky;
+	animation: blink .6s linear infinite;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: .75;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .logo__title {
 	color: var(--color-default-secondary);
-	font-size: 10em;
+	font-size: 11em;
 	transition: font-size .5s ease-in;
 }
 
@@ -94,7 +126,7 @@
   background-color: var(--color-default-secondary);
   position: sticky;
   overflow: scroll;
-	scroll-behavior: [ auto | smooth ];
+	scroll-behavior: smooth;
 	padding: 0.5rem 1rem;
 	top: 1em;
 	transform: rotate(180deg);
@@ -105,6 +137,7 @@
 	height: 100%;
 	transition: transform .2;
 	transform: rotate(360deg);
+	z-index: 1;
 }
 
 .section__header__title {
@@ -118,44 +151,44 @@
 	transform: rotate(180deg)
 }
 
-.section:hover .section__header__title, .section:hover .section__header__subtitle, .section:hover .section__dish {
+.section:hover .section__header__title, .section:hover .section__header__subtitle {
 	color: var(--color-default-secondary);
 	transform: rotate(360deg);
 }
 
 .section--eggs {
 	grid-area: eggs;
-	top: .5em;
+	top: 2%;
 }
 
 .section--noshes {
 	grid-area: noshes;
-	top: .5em;
+	top: 2%;
 }
 
 .section--platters {
 	grid-area: platters;
-	top: .5em;
+	top: 2%;
 }
 
 .section--soup {
 	grid-area: soup;
-	top: 15.15em;
+	top: 35.5%;
 }
 
 .section--salads {
 	grid-area: salads;
-	top: 15.15em;
+	top: 35.5%;
 }
 
 .section--boards {
 	grid-area: boards;
-	top: 29.75rem;
+	top: 90%;
 }
 
 .section--sweet {
 	grid-area: sweet;
-	top: 32.5rem;
+	top: 90%;
 }
 
 .container--platters, .container--boards, .container--sweet {
@@ -163,7 +196,6 @@
 	grid-template-columns: repeat(2, 1fr);
 	grid-column-gap: 1rem;
 }
-
 
 /* dishes */
 .section__dish {
@@ -173,6 +205,16 @@
 
 .section__dish:hover {
 	background-color: var(--color-default-secondary);
+	transform: scale(1.1);
+  transition: all ease 500ms;
+	animation: .5s animateBorder ease infinite;
+}
+
+@keyframes animateBorder {
+  to {
+		outline-color: #69D2E7;
+    box-shadow: 0 0 0 10px #E0E4CC;
+  }
 }
 
 .section__dish__title {
@@ -199,6 +241,150 @@
 
 .section__dish:hover .section__dish__title,  .section__dish:hover .section__dish__subtitle, .section__dish:hover .section__dish__prize {
 	color: var(--color-default-primary);
+}
+
+/* color switch */
+
+/* sunny: pink&red */
+.switch--sunny:checked ~ .switch__label {
+  color: var(--color-sun-primary);
+	transition: color 2s ease-out;
+
+}
+
+.switch--sunny:checked ~ .menu .logo__title, .switch--sunny:checked ~ .menu .logo__subtitle {
+  color: var(--color-sun-secondary);
+	transition: color 2s ease-out;
+
+}
+.switch--sunny:checked ~ .menu .section:hover {
+  background-color: var(--color-sun-primary);
+	transition: background-color .2s ease-out;
+}
+
+.switch--sunny:checked ~ .menu {
+  background-color: var(--color-sun-primary);
+	transition: background-color 1.5s ease-out;
+}
+
+.switch--sunny:checked ~ .menu .section, .switch--sunny:checked ~ .menu .section .section__dish:hover {
+	background-color: var(--color-sun-secondary);
+}
+
+.switch--sunny:checked ~ .menu .section .section__header__title, .switch--sunny:checked ~ .menu .section .section__header__subtitle, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+	color: var(--color-sun-primary);
+	transition: background-color 0.3s ease-out;
+}
+
+.switch--sunny:checked ~ .menu .section:hover .section__header__title, .switch--sunny:checked ~ .menu .section:hover .section__header__subtitle, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__prize, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__title, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__subtitle {
+	color: var(--color-sun-secondary);
+}
+
+
+/* rainy: blue&pink */
+.switch--rainy:checked ~ .switch__label {
+  color: var(--color-rain-primary);
+	transition: color 2s ease-out;
+}
+
+.switch--rainy:checked ~ .menu .logo__title, .switch--rainy:checked ~ .menu .logo__subtitle {
+  color: var(--color-rain-secondary);
+	transition: color 2s ease-out;
+
+}
+
+.switch--rainy:checked ~ .menu .section:hover {
+  background-color: var(--color-rain-primary);
+	transition: background-color .2s ease-out;
+}
+
+.switch--rainy:checked ~ .menu {
+  background-color: var(--color-rain-primary);
+	transition: background-color 1.5s ease-out;
+}
+
+.switch--rainy:checked ~ .menu .section, .switch--rainy:checked ~ .menu .section .section__dish:hover {
+	background-color: var(--color-rain-secondary);
+}
+
+.switch--rainy:checked ~ .menu .section .section__header__title, .switch--rainy:checked ~ .menu .section .section__header__subtitle, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+	color: var(--color-rain-primary);
+	transition: color 0.3s ease-out;
+}
+
+.switch--rainy:checked ~ .menu .section:hover .section__header__title, .switch--rainy:checked ~ .menu .section:hover .section__header__subtitle, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__title, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+	color: var(--color-rain-secondary);
+}
+
+
+/* cloudy: white&green */
+.switch--cloudy:checked ~ .switch__label {
+  color: var(--color-cloudy-secondary);
+	transition: color 2s ease-out;
+}
+
+.switch--cloudy:checked ~ .menu .logo__title, .switch--cloudy:checked ~ .menu .logo__subtitle {
+  color: var(--color-cloudy-secondary);
+	transition: color 2s ease-out;
+}
+
+.switch--cloudy:checked ~ .menu .section:hover {
+  background-color: var(--color-default-primary);
+	transition: background-color .2s ease-out;
+}
+
+.switch--cloudy:checked ~ .menu {
+	background-color: var(--color-default-primary);
+	transition: background-color 1.5s ease-out;
+}
+
+.switch--cloudy:checked ~ .menu .section, .switch--cloudy:checked ~ .menu .section .section__dish:hover {
+	background-color: var(--color-cloudy-secondary);
+	/* transition: background-color 2s ease-out; */
+}
+
+.switch--cloudy:checked ~ .menu .section .section__header__title, .switch--cloudy:checked ~ .menu .section .section__header__subtitle, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+	color: var(--color-default-primary);
+	transition: color 0.3s ease-out;
+}
+
+.switch--cloudy:checked ~ .menu .section:hover .section__header__title, .switch--cloudy:checked ~ .menu .section:hover .section__header__subtitle, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__title, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+	color: var(--color-cloudy-secondary);
+}
+
+
+/* stormy: purple&yellow */
+.switch--stormy:checked ~ .switch__label {
+  color: var(--color-stormy-primary);
+	transition: color 2s ease-out;
+}
+
+.switch--stormy:checked ~ .menu .logo__title, .switch--stormy:checked ~ .menu .logo__subtitle  {
+  color: var(--color-stormy-secondary);
+	transition: color 2s ease-out;
+}
+
+.switch--stormy:checked ~ .menu .section:hover {
+  background-color: var(--color-stormy-primary);
+	transition: background-color .2s ease-out;
+}
+
+.switch--stormy:checked ~ .menu {
+	background-color: var(--color-stormy-primary);
+	transition: background-color 1.5s ease-out;
+}
+
+.switch--stormy:checked ~ .menu .section, .switch--stormy:checked ~ .menu .section .section__dish:hover{
+	background-color: var(--color-stormy-secondary);
+}
+
+.switch--stormy:checked ~ .menu .section .section__header__title, .switch--stormy:checked ~ .menu .section .section__header__subtitle, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+	color: var(--color-stormy-primary);
+	transition: color 0.3s ease-out;
+}
+
+.switch--stormy:checked ~ .menu .section:hover .section__header__title, .switch--stormy:checked ~ .menu .section:hover .section__header__subtitle, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__title, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+	color: var(--color-stormy-secondary);
 }
 
 @media (max-width: 58em) {
@@ -233,6 +419,10 @@
   }
 
 	/* logo */
+	.logo {
+		top: 17%;
+	}
+
 	.logo__title {
 		line-height: 11.5rem;
 		font-size: 9em;
@@ -240,62 +430,62 @@
 
 	/* menu sections */
 	.section {
-		height: 20vw;
+		height: 22vh;
 	}
 
 	.section--eggs {
 		grid-area: eggs;
-		top: 2.5vh;
+		top: 2.5%;
 	}
 
 	.section--noshes {
 		grid-area: noshes;
-		top: 2.5vh;
+		top: 2.5%;
 	}
 
 	.section--platters {
 		grid-area: platters;
-		top: 2.5vh;
+		top: 2.5%;
 	}
 
 	.section--soup {
 		grid-area: soup;
-		top: 38vh;
+		top: 37%;
 	}
 
 	.section--salads {
 		grid-area: salads;
-		top: 38vh;
+		top: 37%;
 	}
 
 	.section--boards {
 		grid-area: boards;
-		top: 38vh;
+		top: 37%;
 	}
 
 	.section--sweet {
 		grid-area: sweet;
-		top: 100vh;
+		top: 73%;
 	}
 
   .section--eggs:hover {
-		height: 75vh
+		height: 95vh;
 	}
 
   .section--noshes:hover {
-		height: 60vh;
+		height: 95vh;
 	}
 
   .section--platters:hover {
-		height: 50vh;
+		height: 95vh;
 	}
 
-  .section--soup:hover, .section--salads:hover {
-		height: 30vh;
+  .section--soup:hover, .section--salads:hover, .section--boards:hover {
+		height: 60vh;
 	}
 
-  .section--boards:hover {
-		height: 57.5vh;
+	.section--sweet:hover {
+		height: 34vh;
 	}
 
 	.container--platters, .container--boards {
@@ -327,6 +517,150 @@
 		float: right;
 		font-size: 1rem;
 	}
+
+	/* color switch */
+
+	/* sunny: pink&red */
+	.switch--sunny:checked ~ .switch__label {
+	  color: var(--color-sun-secondary);
+		transition: color 2s ease-out;
+
+	}
+
+	.switch--sunny:checked ~ .menu .logo__title, .switch--sunny:checked ~ .menu .logo__subtitle {
+	  color: var(--color-sun-primary);
+		transition: color 2s ease-out;
+
+	}
+	.switch--sunny:checked ~ .menu .section:hover {
+	  background-color: var(--color-sun-secondary);
+		transition: background-color .2s ease-out;
+	}
+
+	.switch--sunny:checked ~ .menu {
+	  background-color: var(--color-sun-secondary);
+		transition: background-color 1.5s ease-out;
+	}
+
+	.switch--sunny:checked ~ .menu .section, .switch--sunny:checked ~ .menu .section .section__dish:hover {
+		background-color: var(--color-sun-primary);
+	}
+
+	.switch--sunny:checked ~ .menu .section .section__header__title, .switch--sunny:checked ~ .menu .section .section__header__subtitle, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+		color: var(--color-sun-secondary);
+		transition: background-color 0.3s ease-out;
+	}
+
+	.switch--sunny:checked ~ .menu .section:hover .section__header__title, .switch--sunny:checked ~ .menu .section:hover .section__header__subtitle, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__prize, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__title, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__subtitle {
+		color: var(--color-sun-primary);
+	}
+
+
+	/* rainy: blue&pink */
+	.switch--rainy:checked ~ .switch__label {
+	  color: var(--color-rain-secondary);
+		transition: color 2s ease-out;
+	}
+
+	.switch--rainy:checked ~ .menu .logo__title, .switch--rainy:checked ~ .menu .logo__subtitle {
+	  color: var(--color-rain-primary);
+		transition: color 2s ease-out;
+
+	}
+
+	.switch--rainy:checked ~ .menu .section:hover {
+	  background-color: var(--color-rain-secondary);
+		transition: background-color .2s ease-out;
+	}
+
+	.switch--rainy:checked ~ .menu {
+	  background-color: var(--color-rain-secondary);
+		transition: background-color 1.5s ease-out;
+	}
+
+	.switch--rainy:checked ~ .menu .section, .switch--rainy:checked ~ .menu .section .section__dish:hover {
+		background-color: var(--color-rain-primary);
+	}
+
+	.switch--rainy:checked ~ .menu .section .section__header__title, .switch--rainy:checked ~ .menu .section .section__header__subtitle, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+		color: var(--color-rain-secondary);
+		transition: color 0.3s ease-out;
+	}
+
+	.switch--rainy:checked ~ .menu .section:hover .section__header__title, .switch--rainy:checked ~ .menu .section:hover .section__header__subtitle, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__title, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+		color: var(--color-rain-primary);
+	}
+
+
+	/* cloudy: white&green */
+	.switch--cloudy:checked ~ .switch__label {
+	  color: var(--color-cloudy-secondary);
+		transition: color 2s ease-out;
+	}
+
+	.switch--cloudy:checked ~ .menu .logo__title, .switch--cloudy:checked ~ .menu .logo__subtitle {
+	  color: var(--color-default-primary);
+		transition: color 2s ease-out;
+	}
+
+	.switch--cloudy:checked ~ .menu .section:hover {
+	  background-color: var(--color-cloudy-secondary);
+		transition: background-color .2s ease-out;
+	}
+
+	.switch--cloudy:checked ~ .menu {
+		background-color: var(--color-cloudy-secondary);
+		transition: background-color 1.5s ease-out;
+	}
+
+	.switch--cloudy:checked ~ .menu .section, .switch--cloudy:checked ~ .menu .section .section__dish:hover {
+		background-color: var(--color-default-primary);
+		/* transition: background-color 2s ease-out; */
+	}
+
+	.switch--cloudy:checked ~ .menu .section .section__header__title, .switch--cloudy:checked ~ .menu .section .section__header__subtitle, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+		color: var(--color-cloudy-secondary);
+		transition: color 0.3s ease-out;
+	}
+
+	.switch--cloudy:checked ~ .menu .section:hover .section__header__title, .switch--cloudy:checked ~ .menu .section:hover .section__header__subtitle, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__title, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+		color: var(--color-default-primary);
+	}
+
+
+	/* stormy: purple&yellow */
+	.switch--stormy:checked ~ .switch__label {
+	  color: var(--color-stormy-secondary);
+		transition: color 2s ease-out;
+	}
+
+	.switch--stormy:checked ~ .menu .logo__title, .switch--stormy:checked ~ .menu .logo__subtitle  {
+	  color: var(--color-stormy-primary);
+		transition: color 2s ease-out;
+	}
+
+	.switch--stormy:checked ~ .menu .section:hover {
+	  background-color: var(--color-stormy-secondary);
+		transition: background-color .2s ease-out;
+	}
+
+	.switch--stormy:checked ~ .menu {
+		background-color: var(--color-stormy-secondary);
+		transition: background-color 1.5s ease-out;
+	}
+
+	.switch--stormy:checked ~ .menu .section, .switch--stormy:checked ~ .menu .section .section__dish:hover{
+		background-color: var(--color-stormy-primary);
+	}
+
+	.switch--stormy:checked ~ .menu .section .section__header__title, .switch--stormy:checked ~ .menu .section .section__header__subtitle, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+		color: var(--color-stormy-secondary);
+		transition: color 0.3s ease-out;
+	}
+
+	.switch--stormy:checked ~ .menu .section:hover .section__header__title, .switch--stormy:checked ~ .menu .section:hover .section__header__subtitle, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__title, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+		color: var(--color-stormy-primary);
+	}
 }
 
 @media (max-width: 38em) {
@@ -337,86 +671,95 @@
 			"."
 			"."
 			"."
-			"."
 	    "eggs"
 			"eggs"
 			"."
 			"."
+			"."
 			"noshes"
 			"noshes"
+			"."
 			"."
 			"."
 			"platters"
 			"platters"
 			"."
 			"."
+			"."
+			"."
 			"soup"
 			"soup"
+			"."
 			"."
 			"."
 			"salads"
 			"salads"
 			"."
 			"."
+			"."
 			"boards"
 			"boards"
+			"."
 			"."
 			"."
 			"sweet"
 			"sweet";
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(40, 25vh);
+		scroll-snap-type: y mandatory;
   }
 
 	/* logo */
 	.logo__title {
-		font-size: 5.5em;
+		line-height: 8rem;
+		font-size: 6em;
 	}
 
 	.logo__subtitle {
 		font-size: 1.25rem;
-		margin-top: 10vh;
+		margin-top: 15%;
 	}
 
 	/* menu sections */
+
+	.section:hover {
+		height: 95vh;
+	}
+
 	.section--eggs {
 		grid-area: eggs;
-		top: 2vh;
+		top: 2%;
 	}
 
 	.section--noshes {
 		grid-area: noshes;
-		top: 2vh;
+		top: 37.5%;
 	}
 
 	.section--platters {
 		grid-area: platters;
-		top: 2vh;
+		top: 73.5%;
 	}
 
 	.section--soup {
 		grid-area: soup;
-		top: 2vh;
+		top: 2%;
 	}
 
 	.section--salads {
 		grid-area: salads;
-		top: 2vh;
+		top: 37.5%;
 	}
 
 	.section--boards {
 		grid-area: boards;
-		top: 2vh;
+		top: 73.5%;
 	}
 
 	.section--sweet {
 		grid-area: sweet;
-		top: 2vh;
+		top: 2%;
 	}
-
-  .section--eggs:hover, .section--noshes:hover, .section--platters:hover, .section--soup:hover, .section--salads:hover, .section--boards:hover, .section--sweet:hover {
-    height: 95vh;
-  }
 
 	.container--sweet {
 		display: grid;
@@ -441,110 +784,149 @@
 		float: right;
 		font-size: 1rem;
 	}
-}
+
+	/* color switch */
+
+	/* sunny: pink&red */
+	.switch--sunny:checked ~ .switch__label {
+	  color: var(--color-sun-primary);
+		transition: color 2s ease-out;
+
+	}
+
+	.switch--sunny:checked ~ .menu .logo__title, .switch--sunny:checked ~ .menu .logo__subtitle {
+	  color: var(--color-sun-secondary);
+		transition: color 2s ease-out;
+
+	}
+	.switch--sunny:checked ~ .menu .section:hover {
+	  background-color: var(--color-sun-primary);
+		transition: background-color .2s ease-out;
+	}
+
+	.switch--sunny:checked ~ .menu {
+	  background-color: var(--color-sun-primary);
+		transition: background-color 1.5s ease-out;
+	}
+
+	.switch--sunny:checked ~ .menu .section, .switch--sunny:checked ~ .menu .section .section__dish:hover {
+		background-color: var(--color-sun-secondary);
+	}
+
+	.switch--sunny:checked ~ .menu .section .section__header__title, .switch--sunny:checked ~ .menu .section .section__header__subtitle, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+		color: var(--color-sun-primary);
+		transition: background-color 0.3s ease-out;
+	}
+
+	.switch--sunny:checked ~ .menu .section:hover .section__header__title, .switch--sunny:checked ~ .menu .section:hover .section__header__subtitle, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__prize, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__title, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__subtitle {
+		color: var(--color-sun-secondary);
+	}
 
 
-/* color switch */
+	/* rainy: blue&pink */
+	.switch--rainy:checked ~ .switch__label {
+	  color: var(--color-rain-primary);
+		transition: color 2s ease-out;
+	}
 
-/* sunny: pink&red */
-.switch--sunny:checked ~ .switch__label {
-  color: var(--color-sun-primary);
-}
+	.switch--rainy:checked ~ .menu .logo__title, .switch--rainy:checked ~ .menu .logo__subtitle {
+	  color: var(--color-rain-secondary);
+		transition: color 2s ease-out;
 
-.switch--sunny:checked ~ .menu .logo__title, .switch--sunny:checked ~ .menu .logo__subtitle {
-  color: var(--color-sun-secondary);
-}
+	}
 
-.switch--sunny:checked ~ .menu, .switch--sunny:checked ~ .menu .section:hover {
-  background-color: var(--color-sun-primary);
-}
+	.switch--rainy:checked ~ .menu .section:hover {
+	  background-color: var(--color-rain-primary);
+		transition: background-color .2s ease-out;
+	}
 
-.switch--sunny:checked ~ .menu .section, .switch--sunny:checked ~ .menu .section .section__dish:hover {
-	background-color: var(--color-sun-secondary);
-}
+	.switch--rainy:checked ~ .menu {
+	  background-color: var(--color-rain-primary);
+		transition: background-color 1.5s ease-out;
+	}
 
-.switch--sunny:checked ~ .menu .section .section__header__title, .switch--sunny:checked ~ .menu .section .section__header__subtitle, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--sunny:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
-	color: var(--color-sun-primary);
-}
+	.switch--rainy:checked ~ .menu .section, .switch--rainy:checked ~ .menu .section .section__dish:hover {
+		background-color: var(--color-rain-secondary);
+	}
 
-.switch--sunny:checked ~ .menu .section:hover .section__header__title, .switch--sunny:checked ~ .menu .section:hover .section__header__subtitle, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__prize, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__title, .switch--sunny:checked ~ .menu .section .section__dish .section__dish__subtitle {
-	color: var(--color-sun-secondary);
-}
+	.switch--rainy:checked ~ .menu .section .section__header__title, .switch--rainy:checked ~ .menu .section .section__header__subtitle, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+		color: var(--color-rain-primary);
+		transition: color 0.3s ease-out;
+	}
 
-
-/* rainy: blue&pink */
-.switch--rainy:checked ~ .switch__label {
-  color: var(--color-rain-primary);
-}
-
-.switch--rainy:checked ~ .menu .logo__title, .switch--rainy:checked ~ .menu .logo__subtitle {
-  color: var(--color-rain-secondary);
-}
-
-.switch--rainy:checked ~ .menu, .switch--rainy:checked ~ .menu .section:hover {
-  background-color: var(--color-rain-primary);
-}
-
-.switch--rainy:checked ~ .menu .section, .switch--rainy:checked ~ .menu .section .section__dish:hover {
-	background-color: var(--color-rain-secondary);
-}
-
-.switch--rainy:checked ~ .menu .section .section__header__title, .switch--rainy:checked ~ .menu .section .section__header__subtitle, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--rainy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
-	color: var(--color-rain-primary);
-}
-
-.switch--rainy:checked ~ .menu .section:hover .section__header__title, .switch--rainy:checked ~ .menu .section:hover .section__header__subtitle, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__title, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__subtitle {
-	color: var(--color-rain-secondary);
-}
+	.switch--rainy:checked ~ .menu .section:hover .section__header__title, .switch--rainy:checked ~ .menu .section:hover .section__header__subtitle, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__title, .switch--rainy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+		color: var(--color-rain-secondary);
+	}
 
 
-/* cloudy: white&green */
-.switch--cloudy:checked ~ .switch__label {
-  color: var(--color-cloudy-secondary);
-}
+	/* cloudy: white&green */
+	.switch--cloudy:checked ~ .switch__label {
+	  color: var(--color-cloudy-secondary);
+		transition: color 2s ease-out;
+	}
 
-.switch--cloudy:checked ~ .menu .logo__title, .switch--cloudy:checked ~ .menu .logo__subtitle {
-  color: var(--color-cloudy-secondary);
-}
+	.switch--cloudy:checked ~ .menu .logo__title, .switch--cloudy:checked ~ .menu .logo__subtitle {
+	  color: var(--color-cloudy-secondary);
+		transition: color 2s ease-out;
+	}
 
-.switch--cloudy:checked ~ .menu, .switch--cloudy:checked ~ .menu .section:hover {
-  background-color: var(--color-default-primary);
-}
+	.switch--cloudy:checked ~ .menu .section:hover {
+	  background-color: var(--color-default-primary);
+		transition: background-color .2s ease-out;
+	}
 
-.switch--cloudy:checked ~ .menu .section, .switch--cloudy:checked ~ .menu .section .section__dish:hover {
-	background-color: var(--color-cloudy-secondary);
-}
+	.switch--cloudy:checked ~ .menu {
+		background-color: var(--color-default-primary);
+		transition: background-color 1.5s ease-out;
+	}
 
-.switch--cloudy:checked ~ .menu .section .section__header__title, .switch--cloudy:checked ~ .menu .section .section__header__subtitle, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
-	color: var(--color-default-primary);
-}
+	.switch--cloudy:checked ~ .menu .section, .switch--cloudy:checked ~ .menu .section .section__dish:hover {
+		background-color: var(--color-cloudy-secondary);
+		/* transition: background-color 2s ease-out; */
+	}
 
-.switch--cloudy:checked ~ .menu .section:hover .section__header__title, .switch--cloudy:checked ~ .menu .section:hover .section__header__subtitle, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__title, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__subtitle {
-	color: var(--color-cloudy-secondary);
-}
+	.switch--cloudy:checked ~ .menu .section .section__header__title, .switch--cloudy:checked ~ .menu .section .section__header__subtitle, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--cloudy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+		color: var(--color-default-primary);
+		transition: color 0.3s ease-out;
+	}
+
+	.switch--cloudy:checked ~ .menu .section:hover .section__header__title, .switch--cloudy:checked ~ .menu .section:hover .section__header__subtitle, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__title, .switch--cloudy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+		color: var(--color-cloudy-secondary);
+	}
 
 
-/* stormy: purple&yellow */
-.switch--stormy:checked ~ .switch__label {
-  color: var(--color-stormy-primary);
-}
+	/* stormy: purple&yellow */
+	.switch--stormy:checked ~ .switch__label {
+	  color: var(--color-stormy-primary);
+		transition: color 2s ease-out;
+	}
 
-.switch--stormy:checked ~ .menu .logo__title, .switch--stormy:checked ~ .menu .logo__subtitle  {
-  color: var(--color-stormy-secondary);
-}
+	.switch--stormy:checked ~ .menu .logo__title, .switch--stormy:checked ~ .menu .logo__subtitle  {
+	  color: var(--color-stormy-secondary);
+		transition: color 2s ease-out;
+	}
 
-.switch--stormy:checked ~ .menu, .switch--stormy:checked ~ .menu .section:hover {
-  background-color: var(--color-stormy-primary);
-}
+	.switch--stormy:checked ~ .menu .section:hover {
+	  background-color: var(--color-stormy-primary);
+		transition: background-color .2s ease-out;
+	}
 
-.switch--stormy:checked ~ .menu .section, .switch--stormy:checked ~ .menu .section .section__dish:hover{
-	background-color: var(--color-stormy-secondary);
-}
+	.switch--stormy:checked ~ .menu {
+		background-color: var(--color-stormy-primary);
+		transition: background-color 1.5s ease-out;
+	}
 
-.switch--stormy:checked ~ .menu .section .section__header__title, .switch--stormy:checked ~ .menu .section .section__header__subtitle, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
-	color: var(--color-stormy-primary);
-}
+	.switch--stormy:checked ~ .menu .section, .switch--stormy:checked ~ .menu .section .section__dish:hover{
+		background-color: var(--color-stormy-secondary);
+	}
 
-.switch--stormy:checked ~ .menu .section:hover .section__header__title, .switch--stormy:checked ~ .menu .section:hover .section__header__subtitle, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__title, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__subtitle {
-	color: var(--color-stormy-secondary);
+	.switch--stormy:checked ~ .menu .section .section__header__title, .switch--stormy:checked ~ .menu .section .section__header__subtitle, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__prize, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__title, .switch--stormy:checked ~ .menu .section .section__dish:hover .section__dish__subtitle {
+		color: var(--color-stormy-primary);
+		transition: color 0.3s ease-out;
+	}
+
+	.switch--stormy:checked ~ .menu .section:hover .section__header__title, .switch--stormy:checked ~ .menu .section:hover .section__header__subtitle, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__prize, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__title, .switch--stormy:checked ~ .menu .section .section__dish .section__dish__subtitle {
+		color: var(--color-stormy-secondary);
+	}
+
 }
