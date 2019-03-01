@@ -29,8 +29,6 @@
     // hash
     hash: () => {
       window.addEventListener('hashchange', () => {
-        // let hash = 
-
         let movieID = window.location.hash.substr(1)
         if (window.localStorage.getItem('movie-'+window.location.hash.split('#')[1])){
           router.handle(movieID)
@@ -154,7 +152,7 @@
       const section = document.createElement('section')
 
       const link = document.createElement('a')
-            link.setAttribute('href', '/src')
+            link.setAttribute('href', '/wafs/src')
             link.textContent = 'terug naar overzicht'
 
       const title = document.createElement('h1')
@@ -236,7 +234,7 @@
       const section = document.createElement('section')
 
       const link = document.createElement('a')
-            link.setAttribute('href', '/src')
+            link.setAttribute('href', '/wafs/src')
             link.textContent = 'terug naar overzicht'
 
       const title = document.createElement('h1')
