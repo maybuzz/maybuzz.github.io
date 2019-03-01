@@ -157,6 +157,13 @@ section > a {
     max-height: 60vh;
   }
 
+  section {
+    text-align: center;
+    grid-column: span 2;
+    margin-left: 5em;
+    margin-right: 5em;
+  }
+
 }
 
 /* mobile */
@@ -168,5 +175,12 @@ section > a {
   article {
     min-height: 30vh;
     max-height: 50vh;
+  }
+
+  section {
+    text-align: center;
+    grid-column: span 1;
+    margin-left: 2em;
+    margin-right: 2em;
   }
 }
