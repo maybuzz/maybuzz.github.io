@@ -20,17 +20,23 @@
       if (window.localStorage.getItem('movie-'+hash)) {
         console.log('router: handle for '+hash)
         routes.detail(hash)
-      } else if (true) {
+      } else {
         console.log('router: handle for overview' );
         window.location.hash = ''
         routes.overview()
       }
     },
+    // hash
     hash: () => {
       window.addEventListener('hashchange', () => {
-        console.log("hash")
+        // let hash = 
+
         let movieID = window.location.hash.substr(1)
-        const renderDetail = render.detail(movieID)
+        if (window.localStorage.getItem('movie-'+window.location.hash.split('#')[1])){
+          router.handle(movieID)
+        } else {
+          render.detail(movieID)
+        }
       })
     }
   }
