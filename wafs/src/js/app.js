@@ -2,7 +2,6 @@
 
   const app = {
     init: () => {
-      console.log("app: init")
       router.handle()
       router.hash()
     },
@@ -35,20 +34,16 @@
   const routes = {
     overview: async () => {
 
-      console.log("routes: overview")
-
       render.onload()
 
       api.getData()
-        .then((allData) => {
+      .then((allData) => {
           const cleanData = api.formatData(allData)
           const renderOverview = render.overview(cleanData)
         })
         .catch((err) => { console.warn(err); render.error("data error") })
     },
     detail: (id) => {
-
-      console.log("routes: detail")
 
       render.onload()
 
@@ -59,14 +54,11 @@
 
   const api = {
     getData: () => {
-      console.log("api: getData")
-
       return fetch(app.config.url)
       .then((response) => { return response.json() })
       .catch((err) => { console.warn(err); render.error("api error") })
     },
     formatData: (data) => {
-      console.log("api: formatData")
       const itemList = data.map((item) => {
 
         const format = {
@@ -80,9 +72,10 @@
           url: item.url
         }
 
+        window.localStorage.setItem('movie-'+item.id,JSON.stringify(format))
+
         return format
 
-        window.localStorage.setItem('movie-'+item.id,JSON.stringify(format))
       })
     }
   }
@@ -100,9 +93,8 @@
 
   const render = {
     overview: (movies) => {
-      document.getElementById('spinner').remove()
-
       console.log("render: overview")
+      document.getElementById('spinner').remove()
 
       movies = Object.keys(window.localStorage).filter((v) => v.startsWith('movie-'))
 
@@ -134,10 +126,11 @@
       })
     },
     detail: (movieID) => {
-
-      document.getElementById('spinner').remove()
-
       console.log("render: detail")
+
+      if(document.getElementById('spinner') != undefined){
+        document.getElementById('spinner').remove()
+      }
 
       const movieData = JSON.parse(localStorage.getItem("movie-"+movieID))
 
@@ -222,9 +215,9 @@
 
     },
     error: (err) => {
-      document.getElementById('spinner').remove()
-
       console.warn("application err: ", err)
+
+      document.getElementById('spinner').remove()
 
       const app = document.getElementById('main')
 
