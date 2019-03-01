@@ -12,18 +12,18 @@
 
   const router = {
     handle: () => {
-      let hash = window.location.hash.split("#")[1]
-      if (window.localStorage.getItem("movie-"+hash)) {
-        console.log("router: handle for "+hash)
+      let hash = window.location.hash.split('#')[1]
+      if (window.localStorage.getItem('movie-'+hash)) {
+        console.log('router: handle for '+hash)
         routes.detail(hash)
       } else {
-        console.log("router: handle for overview" );
-        window.location.hash = ""
+        console.log('router: handle for overview' );
+        window.location.hash = ''
         routes.overview()
       }
     },
     hash: () => {
-      window.addEventListener("hashchange", () => {
+      window.addEventListener('hashchange', () => {
         let movieID = window.location.hash.substr(1)
         const clearAll = clear.clearView()
         const renderDetail = router.handle(movieID)
@@ -41,7 +41,7 @@
           const cleanData = api.formatData(allData)
           const renderOverview = render.overview(cleanData)
         })
-        .catch((err) => { console.warn(err); render.error("data error") })
+        .catch((err) => { console.warn(err); render.error('data error') })
     },
     detail: (id) => {
 
@@ -56,7 +56,7 @@
     getData: () => {
       return fetch(app.config.url)
       .then((response) => { return response.json() })
-      .catch((err) => { console.warn(err); render.error("api error") })
+      .catch((err) => { console.warn(err); render.error('api error') })
     },
     formatData: (data) => {
       const itemList = data.map((item) => {
@@ -82,7 +82,7 @@
 
   const clear = {
     clearView: () => {
-      console.log("clear: getData")
+      console.log('clear: getData')
       const app = document.getElementById('main')
 
       while (app.firstChild) {
@@ -93,7 +93,7 @@
 
   const render = {
     overview: (movies) => {
-      console.log("render: overview")
+      console.log('render: overview')
       document.getElementById('spinner').remove()
 
       movies = Object.keys(window.localStorage).filter((v) => v.startsWith('movie-'))
@@ -126,16 +126,16 @@
       })
     },
     detail: (movieID) => {
-      console.log("render: detail")
+      console.log('render: detail')
 
       if(document.getElementById('spinner') != undefined){
         document.getElementById('spinner').remove()
       }
 
-      const movieData = JSON.parse(localStorage.getItem("movie-"+movieID))
+      const movieData = JSON.parse(localStorage.getItem('movie-'+movieID))
 
       if (movieData === null) {
-        render.error("id undefined")
+        render.error('id undefined')
         return
       }
 
@@ -145,20 +145,20 @@
 
       const link = document.createElement('a')
             link.setAttribute('href', '/src')
-            link.textContent = "terug naar overzicht"
+            link.textContent = 'terug naar overzicht'
 
       const title = document.createElement('h1')
             title.setAttribute('class', 'title')
             title.textContent = movieData.title
 
       const heading1 = document.createElement('h3')
-            heading1.textContent = "director"
+            heading1.textContent = 'director'
 
       const heading2 = document.createElement('h3')
-            heading2.textContent = "producer"
+            heading2.textContent = 'producer'
 
       const heading3 = document.createElement('h3')
-            heading3.textContent = "rotten tomatoes"
+            heading3.textContent = 'rotten tomatoes'
 
       const text = document.createElement('p')
             text.setAttribute('class', 'text')
@@ -215,7 +215,7 @@
 
     },
     error: (err) => {
-      console.warn("application err: ", err)
+      console.warn('application err: ', err)
 
       document.getElementById('spinner').remove()
 
@@ -225,15 +225,15 @@
 
       const link = document.createElement('a')
             link.setAttribute('href', '/src')
-            link.textContent = "terug naar overzicht"
+            link.textContent = 'terug naar overzicht'
 
       const title = document.createElement('h1')
             title.setAttribute('class', 'error')
-            title.textContent = "error"
+            title.textContent = 'error'
 
       const text = document.createElement('p')
             text.setAttribute('class', 'text')
-            text.textContent = "Oops... something went wrong"
+            text.textContent = 'Oops... something went wrong'
 
 
             app.appendChild(section)
