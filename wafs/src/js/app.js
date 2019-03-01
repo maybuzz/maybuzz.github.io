@@ -1,5 +1,7 @@
 (() => {
 
+  // initialize application, send to router.handle of router.hash to check url
+  // base url
   const app = {
     init: () => {
       router.handle()
@@ -10,13 +12,15 @@
     }
   }
 
+  // router handler and hash
   const router = {
     handle: () => {
       let hash = window.location.hash.split('#')[1]
+
       if (window.localStorage.getItem('movie-'+hash)) {
         console.log('router: handle for '+hash)
         routes.detail(hash)
-      } else {
+      } else if (true) {
         console.log('router: handle for overview' );
         window.location.hash = ''
         routes.overview()
@@ -24,13 +28,14 @@
     },
     hash: () => {
       window.addEventListener('hashchange', () => {
+        console.log("hash")
         let movieID = window.location.hash.substr(1)
-        const clearAll = clear.clearView()
-        const renderDetail = router.handle(movieID)
+        const renderDetail = render.detail(movieID)
       })
     }
   }
 
+  // define routes to overview and detail page
   const routes = {
     overview: async () => {
 
@@ -52,6 +57,7 @@
     }
   }
 
+  // connect to api and structure data
   const api = {
     getData: () => {
       return fetch(app.config.url)
@@ -80,21 +86,15 @@
     }
   }
 
-  const clear = {
-    clearView: () => {
-      console.log('clear: getData')
-      const app = document.getElementById('main')
-
-      while (app.firstChild) {
-          app.removeChild(app.firstChild)
-      }
-    }
-  }
-
+  // render templates for overview and detail page
+  // render loading state (spinner) and error page
   const render = {
     overview: (movies) => {
       console.log('render: overview')
-      document.getElementById('spinner').remove()
+
+      if(document.getElementById('spinner') != undefined){
+        document.getElementById('spinner').remove()
+      }
 
       movies = Object.keys(window.localStorage).filter((v) => v.startsWith('movie-'))
 
@@ -128,6 +128,12 @@
     detail: (movieID) => {
       console.log('render: detail')
 
+      const app = document.getElementById('main')
+
+      while (app.firstChild) {
+          app.removeChild(app.firstChild)
+      }
+
       if(document.getElementById('spinner') != undefined){
         document.getElementById('spinner').remove()
       }
@@ -139,12 +145,10 @@
         return
       }
 
-      const app = document.getElementById('main')
-
       const section = document.createElement('section')
 
       const link = document.createElement('a')
-            link.setAttribute('href', '/wafs/src')
+            link.setAttribute('href', '/src')
             link.textContent = 'terug naar overzicht'
 
       const title = document.createElement('h1')
@@ -215,16 +219,18 @@
 
     },
     error: (err) => {
-      console.warn('application err: ', err)
+      console.warn('application err: ',err)
 
-      document.getElementById('spinner').remove()
+      if(document.getElementById('spinner') != undefined){
+        document.getElementById('spinner').remove()
+      }
 
       const app = document.getElementById('main')
 
       const section = document.createElement('section')
 
       const link = document.createElement('a')
-            link.setAttribute('href', '/wafs/src')
+            link.setAttribute('href', '/src')
             link.textContent = 'terug naar overzicht'
 
       const title = document.createElement('h1')
@@ -244,6 +250,7 @@
     }
   }
 
+  // start application
   app.init()
 
 })()
