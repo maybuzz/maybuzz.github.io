@@ -1,9 +1,3 @@
-// check indenting
-// check naming
-// set to modules
-// check logs om diagrams te maken
-// sorteer functies
-
 (() => {
 
   const app = {
@@ -260,22 +254,3 @@
   app.init()
 
 })()
-
-// const storage = {
-//   setLocal: () => {
-//     window.localStorage.getItem('hash')
-//   }
-// }
-
-// const utilities = {
-//   sortByYear: () => {
-//     console.log("sort by year")
-//     // data uit localStorage halen
-//     // nieuwe array maken, gesorteerd op jaar
-//   },
-//   sortByRTScore: () => {
-//     console.log("sort by RT score")
-//     // data uit localStorage halen
-//     // nieuwe array maken, gesorteerd op RT score
-//   }
-// }
