@@ -144,7 +144,7 @@
       const section = document.createElement('section')
 
       const link = document.createElement('a')
-            link.setAttribute('href', '/src')
+            link.setAttribute('href', '/wafs/src')
             link.textContent = 'terug naar overzicht'
 
       const title = document.createElement('h1')
@@ -224,7 +224,7 @@
       const section = document.createElement('section')
 
       const link = document.createElement('a')
-            link.setAttribute('href', '/src')
+            link.setAttribute('href', '/wafs/src')
             link.textContent = 'terug naar overzicht'
 
       const title = document.createElement('h1')
